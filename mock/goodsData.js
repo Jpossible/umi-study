@@ -9,6 +9,6 @@ export default {
       res.json({
         res:data
       })
-    },2000)
+    },1000)
   }
 }

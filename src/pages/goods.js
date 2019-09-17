@@ -10,12 +10,12 @@ import { connect } from 'dva'
     }
   },
   {
-    getList:()=>({type:'/goods/getList'})
+    getLists:()=>({type:'/goods/getList'})
   }
 )
 class Goods extends React.Component{
   componentDidMount() {
-    this.props.getList()
+    this.props.getLists()
     // console.log(getGoods())
   }
   render() {

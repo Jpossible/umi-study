@@ -1,7 +1,7 @@
 export default {
   routes: [
     { path: '/', component: './index.js' },
-    { path: '/goods', component: './goods.js' },
+    { path: '/goods', component: './goodslist.js' },
     {
       path: '/list', component: './b.js',
       // Routes: ['./routes/PrivateRoute.js']

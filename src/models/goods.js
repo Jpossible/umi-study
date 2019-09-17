@@ -5,18 +5,23 @@ function getGoods() {
     return axios.get('/api/goods')
 }
 export default {
-  state: [],
+  namespace: 'goods',
+  state: [{title:'ng',id:1003}],
   effects: {
     *getList(action, {call, put}){
       console.log(111)
       const res = yield call(getGoods)
-      yield put({type:'initstate', payload: res.data.res})
+      yield put({type:'initGoods', payload: res.data.res})
     }
   },
   reducers: {
-    initstate (state,action) {
+    initGoods (state,action) {
       console.log('reducers',state,action)
       return action.payload
+    },
+    addGoods (state,action) {
+      console.log(action)
+      return [...state,{title:action.payload.title,id:action.payload.id}]
     }
   }
 }
